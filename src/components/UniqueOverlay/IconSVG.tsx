@@ -4,7 +4,7 @@ import SamsungLogo from './Samsung-Logo.png';
 
 export const LogoSVG: React.FC = ({ ...props }) => {
   return (
-      <img src={SamsungLogo} {...props }/>
+      <img src={SamsungLogo} alt='logo loja virtual real' {...props }/>
   )
 }
 

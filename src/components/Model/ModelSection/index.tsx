@@ -6,7 +6,7 @@ import { Container } from './styles'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   modelName: string
-  overlayNode: React.ReactNode
+  overlayNode: React.ReactNode,
 }
 
 const ModelSection: React.FC<Props> = ({

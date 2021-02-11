@@ -12,9 +12,9 @@ const Page: React.FC = () => {
             <ModelsWrapper>
                 <div>
                     {[
-                        'Galaxy S21',
-                        'Galaxy S20',
-                        'Galaxy S20 Fe',
+                        'Branco',
+                        'Rosa',
+                        'Vermelho',
                     ].map(modelName => (
                         <ModelSection
                             key={modelName}

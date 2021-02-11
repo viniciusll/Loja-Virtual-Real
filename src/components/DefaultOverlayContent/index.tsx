@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Heading, Buttons } from './styles'
+import { Container, Heading, Buttons, LinkComponent } from './styles'
 
 interface Props {
     label: string,
@@ -19,7 +19,11 @@ const defaultOverlayContent: React.FC<Props> = ({
 
             <Buttons>
                 <button>Comprar</button>
-                <button className="white">Ver modelos</button>
+                <button className="white">
+                    <LinkComponent to={'/Espacos/'+label}>
+                        Ver modelos
+                    </LinkComponent>
+                </button>
             </Buttons>
         </Container>
     )

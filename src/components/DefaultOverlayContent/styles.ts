@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   display: flex;
@@ -60,4 +61,9 @@ export const Buttons = styled.div`
       margin: 0 0 0 10px;
     }
   }
+`
+
+export const LinkComponent = styled(Link)`
+  text-decoration: none;
+  color: #1a1720;
 `
