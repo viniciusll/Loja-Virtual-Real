@@ -15,14 +15,14 @@ export const Heading = styled.div`
     font-weight: 500;
     font-size: 40px;
     line-height: 48px;
-    color: #393c41;
+    color: #e0e0e0;
   }
 
   > h2 {
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
-    color: #383536;
+    color: #e0e0e0;
   }
 `
 

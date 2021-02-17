@@ -18,10 +18,9 @@ const defaultOverlayContent: React.FC<Props> = ({
             </Heading>
 
             <Buttons>
-                <button>Comprar</button>
                 <button className="white">
                     <LinkComponent to={'/Espacos/'+label}>
-                        Ver modelos
+                        Ver categorias
                     </LinkComponent>
                 </button>
             </Buttons>

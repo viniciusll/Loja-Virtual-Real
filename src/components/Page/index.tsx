@@ -7,23 +7,41 @@ import UniqueOverlay from '../UniqueOverlay'
 import { Container, Spacer } from './styles'
 
 const Page: React.FC = () => {
+
     return (
         <Container>
             <ModelsWrapper>
                 <div>
                     {[
-                        'Branco',
-                        'Rosa',
-                        'Vermelho',
-                    ].map(modelName => (
+                        {
+                            label: 'Espaço Vermelho',
+                            description: 'ESPAÇO DAS COMEMORAÇÕES PREMIAÇÕES E DECORAÇÃO DE AMBIENTES'
+                        },
+                        {
+                            label: 'Espaço Verde & Rosa',
+                            description: 'ESPAÇO DA QUALIDADE AMBIENTAL – CONDECORARCOM.ART.BR'
+                        },
+                        {
+                            label: 'Espaço Azul',
+                            description: 'ESPAÇO DA LIBERDADE E INDEPENDÊNCIA – AUTOEMPREGO A EMPRESA É VOCE!'
+                        },
+                        {
+                            label: 'Espaço Laranja',
+                            description: 'ESPAÇO DA COMUNICAÇÃO AUDIOVISUAL'
+                        },
+                        {
+                            label: 'Espaço Verde',
+                            description: 'ESPAÇO DA EXPANSÃO EMPRESARIAL'
+                        },
+                    ].map(model => (
                         <ModelSection
-                            key={modelName}
+                            key={model.label}
                             className="colored"
-                            modelName={modelName}
+                            modelName={model.label}
                             overlayNode={
                                 <DefaultOverlayContent
-                                    label={modelName}
-                                    description="Order Online for Delivery"
+                                    label={model.label}
+                                    description={model.description}
                                 />
                             }
                         />
