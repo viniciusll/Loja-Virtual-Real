@@ -8,7 +8,6 @@ import ListItem from './Components/ListItem'
 
 const Espacos: React.FC = () => {
   const { name } = useParams()
-  console.log('espaco: ', name)
 
   return (
     <Container>

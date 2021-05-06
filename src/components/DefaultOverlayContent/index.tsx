@@ -3,23 +3,23 @@ import React from 'react'
 import { Container, Heading, Buttons, LinkComponent } from './styles'
 
 interface Props {
-    label: string,
-    description: string
+    nome: string,
+    descricao: string
 }
 
 const defaultOverlayContent: React.FC<Props> = ({
-    label, description
+    nome, descricao
 }) => {
     return (
         <Container>
             <Heading>
-                <h1>{label}</h1>
-                <h2>{description}</h2>
+                <h1>{nome}</h1>
+                <h2>{descricao}</h2>
             </Heading>
 
             <Buttons>
                 <button className="white">
-                    <LinkComponent to={'/Espacos/'+label}>
+                    <LinkComponent to={'/Espacos/'+nome}>
                         Ver categorias
                     </LinkComponent>
                 </button>

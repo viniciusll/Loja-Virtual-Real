@@ -1,47 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { ModelsWrapper, ModelSection } from '../Model'
 import DefaultOverlayContent from '../DefaultOverlayContent'
 import UniqueOverlay from '../UniqueOverlay'
+import api from '../../data/api';
 
 import { Container, Spacer } from './styles'
 
-const Page: React.FC = () => {
+interface PageProps {
+    backgroundColor: string
+}
+
+const Page: React.FC<PageProps> = ({ backgroundColor }) => {
+
+    const [espacos, setEspacos] = useState<any[]>([]);
+
+    const getEspaco = () => {
+        api.get('/products/espacos').then(({ data: { espacos } }) => {
+            setEspacos(espacos)
+            console.log(espacos)
+        })
+    }
+
+    useEffect(() => {
+        getEspaco()
+    }, [])
 
     return (
         <Container>
             <ModelsWrapper>
                 <div>
-                    {[
-                        {
-                            label: 'Espaço Vermelho',
-                            description: 'ESPAÇO DAS COMEMORAÇÕES PREMIAÇÕES E DECORAÇÃO DE AMBIENTES'
-                        },
-                        {
-                            label: 'Espaço Verde & Rosa',
-                            description: 'ESPAÇO DA QUALIDADE AMBIENTAL – CONDECORARCOM.ART.BR'
-                        },
-                        {
-                            label: 'Espaço Azul',
-                            description: 'ESPAÇO DA LIBERDADE E INDEPENDÊNCIA – AUTOEMPREGO A EMPRESA É VOCE!'
-                        },
-                        {
-                            label: 'Espaço Laranja',
-                            description: 'ESPAÇO DA COMUNICAÇÃO AUDIOVISUAL'
-                        },
-                        {
-                            label: 'Espaço Verde',
-                            description: 'ESPAÇO DA EXPANSÃO EMPRESARIAL'
-                        },
-                    ].map(model => (
+                    {espacos.map(model => (
                         <ModelSection
-                            key={model.label}
+                            backgroundColor={model.color}
+                            key={model._id}
                             className="colored"
-                            modelName={model.label}
+                            modelName={model.nome}
                             overlayNode={
                                 <DefaultOverlayContent
-                                    label={model.label}
-                                    description={model.description}
+                                    nome={model.nome}
+                                    descricao={model.descricao}
                                 />
                             }
                         />
